@@ -1,0 +1,35 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %} 
+   پروفایل {{concertdetails.Name}}
+{% endblock%}
+
+{% block mainContent %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="registerStyle">
+            <div class="regData">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mylable">نام : {{ formData.first_name }} </p>
+                    <p class="mylable">نام خانوادگی : {{ formData.last_name }} </p>
+                    <p class="mylable">جنسیت : {{ formData.Gender }} </p>
+                    <p class="mylable">اعتبار : {{ formData.Credit }} </p>
+                        
+                </div>
+                <div class="col-md-6">
+                    <p class="mylable">ایمیل : {{ formData.email }} </p>
+                    <p class="mylable">نام کاربری : {{ formData.username }} </p>
+                    <p class="mylable">رمز عبور : {{ formData.password }} </p>
+                    <p class="mylable">  عکس :  {{ formData.ProfileImage }} </p>
+                </div>
+            </div>   
+        </div>
+        </div>
+        <div class="bottonborder">
+            <button type="submit" class="btn btn-success">ثبت نام</button>
+        </div> 
+        
+    </form>
+{% endblock %}   

@@ -1,0 +1,13 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %}
+خرید بلیط
+{% endblock %}
+
+{% block mainContent %}
+    <form method="POST" enctype="multipart/form-data" dir="rtl" style="margin-top: 20px;">
+    {% csrf_token %}
+       {{form.as_p}}
+       <input type="submit" value="تایید" dir="rtl">
+    </form>
+{% endblock %}    

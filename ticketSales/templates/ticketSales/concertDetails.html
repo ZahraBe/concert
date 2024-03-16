@@ -1,0 +1,27 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %} 
+  جزئیات کنسرت
+{% endblock%}
+
+{% block mainContent %}
+
+   <div class="col-md-10" dir="rtl">
+      <h3 class="detailstyle"> نام کنسرت : {{ concertdetails.Name }}</h3>   
+      <h3 class="detailstyle"> نام خواننده : {{ concertdetails.SingerName }}</h3>   
+      <h3 class="detailstyle"> مدت زمان : {{ concertdetails.length }} دقیقه</h3> 
+      <!-- <h3 class="detailstyle">محل برگزاری : {{timelist.locationModel.Address}}-{{timelist.locationModel.Name}} </h3>    -->
+  
+
+   </div>
+
+   <div class="col-md-2">
+      {% csrf_token %}
+      <div class="imageBox">
+         <img src="{{ concertdetails.Poster.url}}">
+      </div>
+      <a class="btn btn-success" href="/ticketSales/time/list">مشاهده سانس ها</a>
+      <a href="/ticketSales/concertEdit/{{concertdetails.id}}" class="btn btn-success">ویرایش</a>
+
+   </div>
+{% endblock %}   
